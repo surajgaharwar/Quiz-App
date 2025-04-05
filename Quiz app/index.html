@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <label>
+        <input type="checkbox" id="theme-switch" />
+        Dark Mode
+      </label>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+      <h1>Welcome to the Frontend Quiz!</h1>
+      <p>Enter your name to begin</p>
+      <input type="text" id="username" placeholder="Your name" />
+      <button id="begin-btn">Let’s Begin</button>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="hide">
+      <h2 id="personal-greeting">Welcome!</h2>
+
+      <label>Select Category:</label>
+      <select id="category-select">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="mixed">Mixed</option>
+      </select>
+
+      <label>Select Difficulty:</label>
+      <select id="difficulty-select">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="start-btn">Start Quiz</button>
+
+      <!-- Leaderboard -->
+      <div id="leaderboard">
+        <h3>Previous Scores</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Difficulty</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz" class="hide">
+      <div id="progress-wrapper">
+        <span id="progress-text">Question 1 of 5</span>
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+
+      <h2 id="question">Question text</h2>
+      <ul>
+        <li><button class="answer">Option 1</button></li>
+        <li><button class="answer">Option 2</button></li>
+        <li><button class="answer">Option 3</button></li>
+        <li><button class="answer">Option 4</button></li>
+      </ul>
+      <div id="timer">Time: 30</div>
+      <button id="next">Next</button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" class="hide">
+      <h2>Your Score: <span id="score"></span></h2>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
